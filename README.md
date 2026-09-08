@@ -22,6 +22,10 @@ The starter grows one file at a time, in the order a real project needs them:
 - a gate in CI that refuses broken rules, and a passport for everything that runs in production.
 - `docs/handoff.md` — seven lines by which the next operator enters the machine without you.
 
+## See it working
+
+Open [vibecoding.ru](https://vibecoding.ru) right now. Everything there, the code, the pages, the news, the cards, is written by agents. One hundred percent, not ninety-nine. The author did not write a line. He wrote the rules and accepted the work. The operator opens three things and nothing else: `docs/`, `AGENTS.md` with `CLAUDE.md`, and the file with the keys. How it runs, live: [vibecoding.ru/open](https://vibecoding.ru/open).
+
 ## Why
 
 Agents give one person the power of a team. Without a system they produce mess and need a permanent babysitter. Spec-Driven Company is the system: spec, pipeline, glass. The concept, in Russian, lives at [vibecoding.ru/sdc](https://vibecoding.ru/sdc). This repository is the practice.
