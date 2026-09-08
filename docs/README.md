@@ -1,4 +1,4 @@
-# [Project name]
+# [Project name — the folder name if nobody told you]
 
 One page. What this project is, what has been decided, where things are, how to check it. Replace every bracket. Keep it at one page: if it grows, something under it wants its own folder.
 
