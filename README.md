@@ -11,13 +11,13 @@ Open your coding agent (Codex, Claude Code, Cursor, Copilot, Gemini CLI, any oth
 **1. Vanilla.** Nothing gets installed. Works for any project, any language, any stack.
 
 ```text
-Set up Spec-Driven Company in this folder. Download AGENTS.md, CLAUDE.md, docs/README.md and docs/journal.md from https://raw.githubusercontent.com/eugeneshilow/spec-driven-company/main/ and save them here under the same paths. Read AGENTS.md and follow it from now on. Then fill docs/README.md with what this project is, write the first entry in docs/journal.md, and report.
+Set up Spec-Driven Company in this folder. Download AGENTS.md, CLAUDE.md, docs/README.md and docs/journal.md from https://raw.githubusercontent.com/eugeneshilow/spec-driven-company/main/ and save them here under the same paths. Read AGENTS.md and follow it from now on. Then fill in docs/README.md for this project and fill in the first entry that is already in docs/journal.md. Done when no brackets are left in either file. Report.
 ```
 
 **2. With a stack.** The same, plus a working web app and an admin page, built by your agent from a written spec. This is the stack vibecoding.ru runs on: Next.js, Tailwind, Convex.
 
 ```text
-Set up Spec-Driven Company in this folder with the Next.js and Convex stack. Download AGENTS.md, CLAUDE.md, docs/README.md, docs/journal.md and docs/stacks/next-convex.md from https://raw.githubusercontent.com/eugeneshilow/spec-driven-company/main/ and save them here under the same paths, except the stack file: save it as docs/stack.md. Read AGENTS.md and follow it from now on. Then follow docs/stack.md. Stop when http://localhost:3000 and http://localhost:3000/admin are up, and report.
+Set up Spec-Driven Company in this folder with the Next.js and Convex stack. Download AGENTS.md, CLAUDE.md, docs/README.md, docs/journal.md and docs/stacks/next-convex.md from https://raw.githubusercontent.com/eugeneshilow/spec-driven-company/main/ and save them here under the same paths, except the stack file: save it as docs/stack.md. Read AGENTS.md and follow it from now on. Then follow docs/stack.md. Done when http://localhost:3000 and http://localhost:3000/admin are up and the check is green. Report.
 ```
 
 Both prompts end with a report from your agent. Read it, open the links, and give the next task.

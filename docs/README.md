@@ -21,10 +21,10 @@ Decisions live in [journal.md](journal.md), newest first, each with a stable nam
 
 ## How to check
 
-One command that runs the formatter, the linter, the types and the tests. Agents run it before every commit; red means not done.
+One command that runs the formatter, the linter, the types and the tests. Agents run it before every commit; red means not done. No code yet: write "none yet".
 
 ```text
-[your check command, for example: pnpm check]
+[your check command, for example: pnpm check, or: none yet]
 ```
 
 ## How to run
@@ -37,7 +37,7 @@ One command that runs the formatter, the linter, the types and the tests. Agents
 
 One file per zone of the project, each the canon of how that zone works right now.
 
-- [zone.md — one line]
+- [zone.md — one line; a zone file appears with the zone's first rule, never empty]
 
 ## Status
 

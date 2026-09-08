@@ -8,4 +8,4 @@ Decisions and why. Append-only, newest entries first. A decision gets a stable n
 
 **Rejected.** Keeping the truth in chat history and in people's heads. It does not survive a new agent session or a new person.
 
-**Owner's words.** "[Why you adopted it, in your own words.]"
+**Owner's words.** "[Why you adopted it, in your own words. If you set this up from a pasted prompt, the prompt goes here.]"
