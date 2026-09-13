@@ -18,6 +18,8 @@ Every task is one of three kinds. Decide before reading files or touching git.
 - `docs/journal.md` — decisions and why: what was decided, what was rejected, in whose words. Append-only, newest first.
 - `docs/<zone>.md` — the canon of one zone: how it works right now. One rule, written once, edited by replacement.
 
+Runtime files sit next to this one and add, never weaken: `CLAUDE.md` points Claude Code here; `CODEX.md` carries what is specific to Codex. Where they disagree with this file, this file wins.
+
 The pair at the root of `docs/` belongs to the whole project. Every subfolder of `docs/` carries its own pair: `README.md` (the summary of the folder) and `journal.md` (the thinking behind it). A new folder is born with both. A zone file is born with the zone's first rule; do not create empty ones.
 
 If a rule is not written at an address, it does not exist. "Ask the person who remembers" is not an address.
