@@ -75,7 +75,7 @@ A decision is a choice that could be reopened tomorrow. It is recorded in `docs/
 **Owner's words.** "..."
 ```
 
-"Owner's words" is a quote from the human. If no human spoke and the task came as a pasted prompt, quote the prompt.
+"Owner's words" is a quote from the human. If no human spoke and the task came as a pasted prompt, quote its first sentence.
 
 Rules around decisions:
 
