@@ -1,6 +1,6 @@
 # [Project name — the folder name if nobody told you]
 
-One page. What this project is, what has been decided, where things are, how to check it. Replace every bracket. Keep it at one page: if it grows, something under it wants its own folder.
+One page. What this project is, what has been decided, where things are. Replace every bracket. Keep it at one page: if it grows, something under it wants its own folder.
 
 ## What this is
 
@@ -15,23 +15,9 @@ Decisions live in [journal.md](journal.md), newest first, each with a stable nam
 ## Where things are
 
 - `docs/` — the truth: this page, the journal, one file per zone.
-- `AGENTS.md` — the rules every agent reads first.
+- `AGENTS.md` — the rules every agent reads first. Its Stack section says what the project is made of, how to check it and how to run it.
 - [`src/` or wherever the code lives — one line]
 - [the file with the keys — its name and the note that it is never committed]
-
-## How to check
-
-One command that runs the formatter, the linter, the types and the tests. Agents run it before every commit; red means not done. No code yet: write "none yet".
-
-```text
-[your check command, for example: pnpm check, or: none yet]
-```
-
-## How to run
-
-```text
-[your run command and the address, for example: pnpm dev → http://localhost:3000]
-```
 
 ## Zones
 

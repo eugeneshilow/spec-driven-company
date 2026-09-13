@@ -14,9 +14,11 @@ Every task is one of three kinds. Decide before reading files or touching git.
 
 ## Where the truth lives
 
-- `docs/README.md` — one page: what this project is, the decisions made, where things are, how to check it.
+- `docs/README.md` — one page: what this project is, the decisions made, where things are.
 - `docs/journal.md` — decisions and why: what was decided, what was rejected, in whose words. Append-only, newest first.
 - `docs/<zone>.md` — the canon of one zone: how it works right now. One rule, written once, edited by replacement.
+
+Runtime files sit next to this one and add, never weaken: `CLAUDE.md` points Claude Code here; `CODEX.md` carries what is specific to Codex. Where they disagree with this file, this file wins.
 
 The pair at the root of `docs/` belongs to the whole project. Every subfolder of `docs/` carries its own pair: `README.md` (the summary of the folder) and `journal.md` (the thinking behind it). A new folder is born with both. A zone file is born with the zone's first rule; do not create empty ones.
 
@@ -43,9 +45,17 @@ Three kinds of truth, three homes. Decisions of meaning (what we build, for whom
 - Push the branch and open a pull request. Code always goes through a pull request. A change that touches only `docs/` and this file may be merged to `main` directly, unless `docs/README.md` says otherwise.
 - After merge: update `main`, delete the branch and the worktree.
 
+## Stack
+
+What this project is made of and the two commands every agent needs. Filled in at setup, changed by replacement when the stack changes. No code yet? Write "none yet" in all three lines; do not invent a check for a project that has nothing to check.
+
+- Made of: [languages, frameworks, database, hosting, in one line]
+- Check: [one command that runs the formatter, the linter, the types and the tests, for example: pnpm check]
+- Run: [one command and the address, for example: pnpm dev → http://localhost:3000]
+
 ## The check
 
-The project's check command lives in `docs/README.md` under "How to check" (formatter, linter, types, tests, in one line). Run it before every commit. Red means not done, whatever the reason. A warning that was already there is not a reason to call a human. No code yet? Write "none yet" there; do not invent a check for a project that has nothing to check.
+Run the check command from the Stack section before every commit. Red means not done, whatever the reason. A warning that was already there is not a reason to call a human.
 
 ## Risk zones: prepare, do not execute
 
@@ -67,7 +77,7 @@ A decision is a choice that could be reopened tomorrow. It is recorded in `docs/
 **Owner's words.** "..."
 ```
 
-"Owner's words" is a quote from the human. If no human spoke and the task came as a pasted prompt, quote the prompt.
+"Owner's words" is a quote from the human. If no human spoke and the task came as a pasted prompt, quote its first sentence.
 
 Rules around decisions:
 
