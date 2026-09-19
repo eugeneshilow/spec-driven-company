@@ -17,7 +17,7 @@ my-app/          the project folder: open this one in your agent
 ├─ AGENTS.md     pointer: the rules are in main/
 ├─ CLAUDE.md     pointer for Claude Code
 ├─ main/         the repository, a clean mirror of main; never edited by hand
-└─ _wt/          one worktree per task, named after its branch; deleted after merge
+└─ _wt/          one worktree per task, named after its branch; swept once merged
 ```
 
 If the folder lives on a cloud drive (Dropbox, iCloud, OneDrive), exclude `_wt/` and every `node_modules` from sync, or keep projects outside the drive.
