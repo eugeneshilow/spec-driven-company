@@ -73,6 +73,8 @@ Run the check command from the Stack section before every commit. Red means not 
 
 "Ask first" means: do everything up to the button, then stop and hand over one line with the choice. Do not start the discussion in the middle of the work.
 
+A stop for the human has one shape. First line: the one action. Then where, as a clickable link to the exact page and the clicks in order (menu, tab, button). Then what to paste or say back when it is done. Below that, at most two lines about the state. No history, no options, no "state so far".
+
 ## Decisions
 
 A decision is a choice that could be reopened tomorrow. It is recorded in `docs/journal.md` as an entry with a stable name:
