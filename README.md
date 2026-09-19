@@ -1,3 +1,5 @@
+*English ∙ [Русский](lang/ru/README.md) ∙ [Español](lang/es/README.md)*
+
 # Spec-Driven Company
 
 A company where the truth lives in written specs, agents execute them, and status is visible without asking anyone.
@@ -81,9 +83,9 @@ Agents give one person the power of a team. Without a system they produce mess a
 
 Why no code here: code has versions, and versions need maintenance. A recipe in words does not go stale when a library does. Your agent reads it and uses whatever is current on the day you run it.
 
-## Language
+## Languages
 
-Everything in this repository is in English: files, commits, issues. Translations may live in their own place later.
+The English files at the root are the source. Translations live in `lang/<code>/` and mirror the file paths one to one: `lang/ru/AGENTS.md` is `AGENTS.md` in Russian, and the prompts in `lang/ru/README.md` download the Russian files, so the agent keeps docs, journal and reports in that language. A change to an English file and to its translations ships in one pull request; the agent translates. Commits, issues and this README stay in English. Want another language? Add `lang/<code>/` with the same six files, or tell your agent: "translate the downloaded files into <language>, keep the structure and the attribution line".
 
 ## License
 
