@@ -70,7 +70,7 @@ Ejecuta el comando de comprobación de la sección Stack antes de cada commit. R
 
 | Siempre | Pregunta primero | Nunca |
 |---|---|---|
-| trabajar en una rama, escribir la especificación, ejecutar la comprobación, informar | cualquier cosa que mueva dinero, toque claves o accesos, guarde o envíe datos personales, publique fuera del repositorio, cambie ajustes de producción | borrar datos, reescribir cambios de otra persona, hacer force-push a `main`, poner secretos en archivos o logs, pedir un secreto en el chat, dejar archivos de trabajo (capturas, logs, volcados) dentro del repositorio |
+| trabajar en una rama, escribir la especificación, ejecutar la comprobación, informar | cualquier cosa que mueva dinero, toque claves o accesos, guarde o envíe datos personales, publique fuera del repositorio, cambie ajustes de producción | borrar datos, reescribir cambios de otra persona, hacer force-push a `main`, poner secretos en archivos o logs, pedir un secreto en el chat, imprimir un secreto de cualquier archivo o salida de comando, dejar archivos de trabajo (capturas, logs, volcados) dentro del repositorio |
 
 «Pregunta primero» significa: haz todo hasta el botón, luego para y entrega una línea con la elección. No abras la discusión en mitad del trabajo.
 
