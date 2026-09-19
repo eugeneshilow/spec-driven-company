@@ -52,9 +52,9 @@ Done when http://localhost:3000 answers with the project page, http://localhost:
 
 ## What you get
 
-- `AGENTS.md` — the rules: where the truth lives, how to work, git, the stack and the check, risk zones, decisions, structure, production, the report, the loop. Its Stack section is the one place that says what your project is made of and how to check and run it.
+- `AGENTS.md` — the rules: where the truth lives, how to work, answers the human can use, git, the stack and the check, risk zones, decisions, structure, production, the report, the loop. Its Stack section is the one place that says what your project is made of and how to check and run it.
 - `CLAUDE.md` — one line that points Claude Code to `AGENTS.md`. Other agents read `AGENTS.md` directly.
-- `CODEX.md` — what is specific to Codex on top of `AGENTS.md`: answers the human can use, links and media in Codex Desktop. It never weakens the rules.
+- `CODEX.md` — what is specific to Codex on top of `AGENTS.md`: links and media in Codex Desktop. It never weakens the rules.
 - `docs/README.md` — the one page of your project: what it is, decisions, where things are.
 - `docs/journal.md` — decisions and why, append-only, newest first. The first entry is already there: you adopted the method.
 
