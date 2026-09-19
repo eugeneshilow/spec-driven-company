@@ -1,4 +1,4 @@
-# [Project name — the folder name if nobody told you]
+# [Project name — the name of the project folder, the one that holds main/, if nobody told you]
 
 One page. What this project is, what has been decided, where things are. Replace every bracket. Keep it at one page: if it grows, something under it wants its own folder.
 
@@ -23,8 +23,8 @@ Decisions live in [journal.md](journal.md), newest first, each with a stable nam
 
 One file per zone of the project, each the canon of how that zone works right now.
 
-- [zone.md — one line; a zone file appears with the zone's first rule, never empty]
+- [zone.md — one line; a zone file appears with the zone's first rule, never empty; no zones yet? write "none yet"]
 
 ## Status
 
-Where the live status is visible: [a page, a dashboard, a command]. Docs describe how things work; they never hold the current numbers.
+Where the live status is visible: [a page, a dashboard, a command; nothing yet? write "none yet"]. Docs describe how things work; they never hold the current numbers.

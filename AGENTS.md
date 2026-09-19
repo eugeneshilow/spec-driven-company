@@ -10,7 +10,7 @@ Every task is one of three kinds. Decide before reading files or touching git.
 
 1. **Talk.** Explain, discuss, advise. Do not touch git.
 2. **Read.** Read files, change nothing. Update `main` first, then read.
-3. **Write.** Anything that may change the repository, including one line of docs. Preflight, separate branch, never write to `main`.
+3. **Write.** Anything that may change the repository, including one line of docs. Preflight, own worktree, never write to `main`.
 
 ## Where the truth lives
 
@@ -45,9 +45,9 @@ Three kinds of truth, three homes. Decisions of meaning (what we build, for whom
 
 ## Git
 
-- **Layout.** A project is one folder with two things inside: `main/`, the repository, a clean mirror of `main` on the remote, and `_wt/`, one worktree per task, each folder named after its branch. Two pointer files sit next to them in the project folder, `AGENTS.md` and `CLAUDE.md`, so an agent opened at the project folder finds the rules in `main/`. Nothing is edited in `main/` by hand: it is only synced and cleaned. Every write task, one line of docs included, lives in its own worktree under `_wt/`.
-- `main` is reached only by merge. Code merges through a pull request; a change that touches only `docs/` and this file may merge without one. The human merges. If the human said "ship", the agent merges itself once the check is green and no risk zone is touched. The one exception is the first setup: no repository yet? `git init` in `main/`, commit the setup there on `main`, and say so in the report. A remote and pull requests come with the first code.
-- Preflight for every write task, in `main/`: `git status`, `git fetch`, fast-forward `main`. If `main` is dirty or ahead of the remote, stop and say so. Then `git worktree add ../_wt/<branch> -b <branch> main`, and work only there: edits, install, the check, the dev server.
+- **Layout.** A project is one folder with two things inside: `main/`, the repository, a clean mirror of the `main` branch on the remote, and `_wt/`, one worktree per task, each folder named after its branch. The default branch is `main`; a repository that arrived with `master` is renamed once, before anything else. Two pointer files sit next to them in the project folder, `AGENTS.md` and `CLAUDE.md`, so an agent opened at the project folder finds the rules in `main/`. Nothing is edited in `main/` by hand: it is only synced and cleaned. Every write task, one line of docs included, lives in its own worktree under `_wt/`.
+- `main` is reached only by merge. Code reaches `main` through a pull request that the human merges; if the human said "ship", the agent merges itself once the check is green (or there is no check yet) and no risk zone is touched. A change that touches only `docs/` and this file needs no pull request: the agent merges it into `main` itself. No remote yet? The same rules, merged locally; the remote and pull requests come with the first code. The one exception to "only by merge" is the first setup, which happens in `main/` itself: no repository yet? `git init -b main` in `main/`, build the setup there, one commit on `main`, and say so in the report.
+- Preflight for every write task, in `main/`: `git status`, `git fetch` (skip if there is no remote), fast-forward `main`. If `main` is dirty or ahead of the remote, stop and say so. Then `git worktree add ../_wt/<branch> -b <branch> main`, and work only there: edits, install, the check, the dev server.
 - Branch name: `<agent>-<YYYY-MM-DD>-<topic>`, for example `codex-2026-09-02-signup-form` or `claude-2026-09-02-signup-form`. The worktree folder carries the same name.
 - Commit at every whole step. A commit is a point you can return to. Only this task's changes go in; never secrets, never someone else's work in progress.
 - Reread the diff as a reviewer, then push the branch and open the pull request. Three things block: a bug on a path that moves money, access or data; a secret in the files; a change that breaks something that worked. Style is not a finding.
@@ -120,7 +120,7 @@ Every write task ends with the same block, so the human can read it in ten secon
 
 ```
 ---
-Outcome: merged | pull request open | committed (first setup only) | blocked
+Outcome: merged | pull request open | branch ready, waiting for the human to merge | committed (first setup only) | blocked
 Link: <pull request or commit>
 Where to look: <address of the page or screen>, or "nothing"
 Files: <path> +a/-b, one per line
