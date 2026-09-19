@@ -28,21 +28,29 @@ Three kinds of truth, three homes. Decisions of meaning (what we build, for whom
 
 ## How to work
 
-1. **Work in a separate branch or worktree.** Nothing is written to `main` directly. Changes reach `main` through a pull request.
+1. **Work in a separate branch or worktree.** `main` is reached only by merge; how, in the Git section.
 2. **No task without a done criterion.** If there is no way to check that the task is done, ask. Do not start.
-3. **Spec before code.** Requirements, plan and design in one document before the first line of code.
+3. **Spec before code.** Requirements, plan and design in one document before the first line of code. For every form in it, a page, a document, an API, a name, find who solved the same task best and take their frame; invent from scratch only when you can say why no frame fits. The plan is ordered steps, not dates: a step is done when the steps it depends on are done.
 4. **Canon before code.** A rule changes in `docs/` first, then in code and tests, in the same change. Never "code now, docs later".
 5. **Tests hold the rules.** A rule that has already cost time or money gets a test. If you break a test, fix it before saying "done".
 6. **Prepare, do not execute, in risk zones.** See the table below. A human presses the button.
 7. **Report the outcome, not the effort.** Say what you did, what you did not do, and what you could not verify.
 
+## Answers the human can use
+
+- Start with what came out and whether it can be used. If the result is partial, name the limit and what it means in practice.
+- Plain full sentences. Translate a term, an error or a status into practical meaning where it appears; commands and logs come after, as proof.
+- Name who acts next. If the human has to do something, give one action, the place, and the expected result.
+- Tell a confirmed failure from something you could not check. Unverified is not done.
+
 ## Git
 
-- No repository yet? `git init`, commit the setup on `main`, and say so in the report. This is the only direct write to `main` a project ever gets. A remote and pull requests come with the first code.
+- `main` is reached only by merge. Code merges through a pull request; a change that touches only `docs/` and this file may merge without one. The human merges. If the human said "ship", the agent merges itself once the check is green and no risk zone is touched. The one exception is the first commit of a new repository: no repository yet? `git init`, commit the setup on `main`, and say so in the report. A remote and pull requests come with the first code.
 - Preflight for every write task: `git status`, `git fetch`, fast-forward `main`, then a new branch from fresh `main`. If `main` is dirty or ahead of origin, stop and say so.
 - Branch name: `<agent>-<YYYY-MM-DD>-<topic>`, for example `codex-2026-09-02-signup-form` or `claude-2026-09-02-signup-form`.
+- The human creates one folder. If the agent needs a worktree, a second copy of the folder for a parallel task, it lives in `.wt/` at the repository root, ignored by git and by the check.
 - Commit at every whole step. A commit is a point you can return to. Only this task's changes go in; never secrets, never someone else's work in progress.
-- Push the branch and open a pull request. Code always goes through a pull request. A change that touches only `docs/` and this file may be merged to `main` directly, unless `docs/README.md` says otherwise.
+- Reread the diff as a reviewer, then push the branch and open the pull request. Three things block: a bug on a path that moves money, access or data; a secret in the files; a change that breaks something that worked. Style is not a finding.
 - After merge: update `main`, delete the branch and the worktree.
 
 ## Stack
@@ -61,7 +69,7 @@ Run the check command from the Stack section before every commit. Red means not 
 
 | Always | Ask first | Never |
 |---|---|---|
-| work in a branch, write the spec, run the check, report | anything that moves money, touches keys or access, stores or sends personal data, publishes outside the repository, changes production settings | delete data, rewrite someone else's changes, force-push to `main`, put secrets into files or logs |
+| work in a branch, write the spec, run the check, report | anything that moves money, touches keys or access, stores or sends personal data, publishes outside the repository, changes production settings | delete data, rewrite someone else's changes, force-push to `main`, put secrets into files or logs, leave working files (screenshots, logs, dumps) inside the repository |
 
 "Ask first" means: do everything up to the button, then stop and hand over one line with the choice. Do not start the discussion in the middle of the work.
 
@@ -84,6 +92,7 @@ Rules around decisions:
 - One rule has one home. Other documents link to it; they do not copy it.
 - The canon changes by replacement. The old rule is deleted in the same commit; history lives in the journal and in git.
 - Before proposing a change to architecture, URLs, data schema or process, read the journal for that zone. Decided questions are not reopened without the owner asking.
+- A "not now" is recorded with the event that reopens it, not a date.
 - Thinking that happened in chat and is not in the journal is unfinished work, like code without a commit.
 
 When you find that you acted against a written rule, fix the cause before the symptom, top down: the rule is not written, write it; it is written in the wrong place, move it; it is written but nobody found it, make it findable from the place where the task starts. "I will be more careful" is not a fix.
@@ -113,6 +122,7 @@ Every write task ends with the same block, so the human can read it in ten secon
 ---
 Outcome: merged | pull request open | committed (first setup only) | blocked
 Link: <pull request or commit>
+Where to look: <address of the page or screen>, or "nothing"
 Files: <path> +a/-b, one per line
 Not verified: <what you could not check and why>, or "nothing"
 Next: one step that moves the project most, and why
