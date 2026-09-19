@@ -42,6 +42,7 @@ Tres clases de verdad, tres casas. Las decisiones de sentido (qué construimos, 
 - Frases completas y llanas. Traduce un término, un error o un estado a su sentido práctico allí donde aparece; los comandos y los logs van después, como prueba.
 - Di quién actúa a continuación. Si la persona tiene que hacer algo, dale una acción, el lugar y el resultado esperado.
 - Distingue un fallo confirmado de algo que no pudiste comprobar. Lo no verificado no está hecho.
+- Responde en el idioma en que escribe la persona; el código, los comandos y los nombres se quedan como están.
 
 ## Git
 
@@ -69,11 +70,13 @@ Ejecuta el comando de comprobación de la sección Stack antes de cada commit. R
 
 | Siempre | Pregunta primero | Nunca |
 |---|---|---|
-| trabajar en una rama, escribir la especificación, ejecutar la comprobación, informar | cualquier cosa que mueva dinero, toque claves o accesos, guarde o envíe datos personales, publique fuera del repositorio, cambie ajustes de producción | borrar datos, reescribir cambios de otra persona, hacer force-push a `main`, poner secretos en archivos o logs, dejar archivos de trabajo (capturas, logs, volcados) dentro del repositorio |
+| trabajar en una rama, escribir la especificación, ejecutar la comprobación, informar | cualquier cosa que mueva dinero, toque claves o accesos, guarde o envíe datos personales, publique fuera del repositorio, cambie ajustes de producción | borrar datos, reescribir cambios de otra persona, hacer force-push a `main`, poner secretos en archivos o logs, pedir un secreto en el chat, dejar archivos de trabajo (capturas, logs, volcados) dentro del repositorio |
 
 «Pregunta primero» significa: haz todo hasta el botón, luego para y entrega una línea con la elección. No abras la discusión en mitad del trabajo.
 
-Una parada para la persona tiene una sola forma. Primera línea: la única acción. Luego dónde, como enlace clicable a la página exacta y los clics en orden (menú, pestaña, botón). Luego qué pegar o decir cuando esté hecho. Debajo, como mucho dos líneas sobre el estado. Sin historia, sin opciones, sin «estado hasta ahora».
+Una parada para la persona tiene una sola forma. Primera línea: la única acción, empezando por un verbo; nada por encima. Luego dónde, como enlace clicable a la página exacta y los clics en orden (menú, pestaña, botón). Luego qué decir cuando esté hecho. Debajo, como mucho dos líneas sobre el estado. Sin historia, sin opciones, sin «estado hasta ahora». Si la persona responde con una captura, la primera línea dice si es la página correcta y la segunda da el siguiente clic.
+
+Un secreto nunca pasa por el chat. La persona lo pone donde vive: la página de ajustes del hosting, o el archivo local de claves. El agente comprueba por el nombre de la variable y nunca pide ni imprime el valor. `--force` solo sobre un árbol sucio, y solo con permiso de la persona.
 
 ## Decisiones
 
