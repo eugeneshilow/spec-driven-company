@@ -116,17 +116,22 @@ Content and layout without a new flow of data or money are outside this rule.
 
 ## Report
 
-Every write task ends with the same block, so the human can read it in ten seconds:
+Every write task ends with the same block, so the human can read it in ten seconds. A lane with nothing to say is left out.
 
 ```
 ---
-Outcome: merged | pull request open | branch ready, waiting for the human to merge | committed (first setup only) | blocked
-Link: <pull request or commit>
-Where to look: <address of the page or screen>, or "nothing"
-Files: <path> +a/-b, one per line
-Not verified: <what you could not check and why>, or "nothing"
-Next: one step that moves the project most, and why
+🧭 next · one step that moves the project most, and why
+📚 docs · the files in docs/ this task relied on, one per line under the lane
+⚖️ compute · who did the work: <agent> 100% solo, or the split between agents
+✅ merged · <commit or pull request> · N files +X/-Y
+   <path> +a/-b, one per line; a journal entry carries its title: docs/journal.md +12/-0 · «name of the entry»
+🌐 where to look
+   <address>, one per line: local · preview · production
+🛂 passport · element ✅ · canon ✅ · glass ✅ · immunity ⬜ (only when something will run without a human)
+⚠️ not verified · what you could not check and why, or "nothing"
 ```
+
+The git lane is one of: `✅ merged · …` · `🔀 pull request #N · check green, waiting for the human` · `📝 committed (first setup only) · <commit>` · `⛔ blocked · why`. The files under it come from `git diff --stat`, never from memory.
 
 ## The loop
 

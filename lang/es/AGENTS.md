@@ -116,17 +116,22 @@ El contenido y la maquetación sin un nuevo flujo de datos o dinero quedan fuera
 
 ## Informe
 
-Toda tarea de escritura termina con el mismo bloque, para que la persona lo lea en diez segundos:
+Toda tarea de escritura termina con el mismo bloque, para que la persona lo lea en diez segundos. Una línea que no tiene nada que decir se omite.
 
 ```
 ---
-Resultado: fusionado | pull request abierto | rama lista, esperando a que la persona fusione | commit hecho (solo primera instalación) | bloqueado
-Enlace: <pull request o commit>
-Dónde mirar: <dirección de la página o pantalla>, o «nada»
-Archivos: <ruta> +a/-b, uno por línea
-No verificado: <qué no pudiste comprobar y por qué>, o «nada»
-Siguiente: el paso que más mueve el proyecto, y por qué
+🧭 next · el paso que más mueve el proyecto, y por qué
+📚 docs · los archivos de docs/ en los que se apoyó la tarea, uno por línea debajo
+⚖️ cómputo · quién hizo el trabajo: <agente> 100 % solo, o el reparto entre agentes
+✅ merged · <commit o pull request> · N files +X/-Y
+   <ruta> +a/-b, una por línea; una entrada del journal lleva su título: docs/journal.md +12/-0 · «nombre de la entrada»
+🌐 dónde mirar
+   <dirección>, una por línea: local · preview · producción
+🛂 pasaporte · elemento ✅ · canon ✅ · cristal ✅ · inmunidad ⬜ (solo cuando algo va a funcionar sin una persona)
+⚠️ no verificado · qué no pudiste comprobar y por qué, o «nada»
 ```
+
+La línea git es una de: `✅ merged · …` · `🔀 pull request #N · comprobación en verde, esperando a la persona` · `📝 commit hecho (solo primera instalación) · <commit>` · `⛔ bloqueado · por qué`. Los archivos debajo salen de `git diff --stat`, nunca de memoria.
 
 ## El ciclo
 
