@@ -10,7 +10,7 @@ Every task is one of three kinds. Decide before reading files or touching git.
 
 1. **Talk.** Explain, discuss, advise. Do not touch git.
 2. **Read.** Read files, change nothing. Update `main` first, then read.
-3. **Write.** Anything that may change the repository, including one line of docs. Preflight, separate branch, never write to `main`.
+3. **Write.** Anything that may change the repository, including one line of docs. Preflight, own worktree, never write to `main`.
 
 ## Where the truth lives
 
@@ -28,7 +28,7 @@ Three kinds of truth, three homes. Decisions of meaning (what we build, for whom
 
 ## How to work
 
-1. **Work in a separate branch or worktree.** `main` is reached only by merge; how, in the Git section.
+1. **Work in a worktree.** Every task has its own worktree under `_wt/`; `main/` is never edited by hand. How, in the Git section.
 2. **No task without a done criterion.** If there is no way to check that the task is done, ask. Do not start.
 3. **Spec before code.** Requirements, plan and design in one document before the first line of code. For every form in it, a page, a document, an API, a name, find who solved the same task best and take their frame; invent from scratch only when you can say why no frame fits. The plan is ordered steps, not dates: a step is done when the steps it depends on are done.
 4. **Canon before code.** A rule changes in `docs/` first, then in code and tests, in the same change. Never "code now, docs later".
@@ -45,13 +45,13 @@ Three kinds of truth, three homes. Decisions of meaning (what we build, for whom
 
 ## Git
 
-- `main` is reached only by merge. Code merges through a pull request; a change that touches only `docs/` and this file may merge without one. The human merges. If the human said "ship", the agent merges itself once the check is green and no risk zone is touched. The one exception is the first commit of a new repository: no repository yet? `git init`, commit the setup on `main`, and say so in the report. A remote and pull requests come with the first code.
-- Preflight for every write task: `git status`, `git fetch`, fast-forward `main`, then a new branch from fresh `main`. If `main` is dirty or ahead of origin, stop and say so.
-- Branch name: `<agent>-<YYYY-MM-DD>-<topic>`, for example `codex-2026-09-02-signup-form` or `claude-2026-09-02-signup-form`.
-- The human creates one folder. If the agent needs a worktree, a second copy of the folder for a parallel task, it lives in `.wt/` at the repository root, ignored by git and by the check.
+- **Layout.** A project is one folder with two things inside: `main/`, the repository, a clean mirror of the `main` branch on the remote, and `_wt/`, one worktree per task, each folder named after its branch. The default branch is `main`; a repository that arrived with `master` is renamed once, before anything else. Two pointer files sit next to them in the project folder, `AGENTS.md` and `CLAUDE.md`, so an agent opened at the project folder finds the rules in `main/`. Nothing is edited in `main/` by hand: it is only synced and cleaned. Every write task, one line of docs included, lives in its own worktree under `_wt/`.
+- `main` is reached only by merge. Code reaches `main` through a pull request that the human merges; if the human said "ship", the agent merges itself once the check is green (or there is no check yet) and no risk zone is touched. A change that touches only `docs/` and this file needs no pull request: the agent merges it into `main` itself. No remote yet? The same rules, merged locally; the remote and pull requests come with the first code. The one exception to "only by merge" is the first setup, which happens in `main/` itself: no repository yet? `git init -b main` in `main/`, build the setup there, one commit on `main`, and say so in the report.
+- Preflight for every write task, in `main/`: `git status`, `git fetch` (skip if there is no remote), fast-forward `main`. If `main` is dirty or ahead of the remote, stop and say so. Then `git worktree add ../_wt/<branch> -b <branch> main`, and work only there: edits, install, the check, the dev server.
+- Branch name: `<agent>-<YYYY-MM-DD>-<topic>`, for example `codex-2026-09-02-signup-form` or `claude-2026-09-02-signup-form`. The worktree folder carries the same name.
 - Commit at every whole step. A commit is a point you can return to. Only this task's changes go in; never secrets, never someone else's work in progress.
 - Reread the diff as a reviewer, then push the branch and open the pull request. Three things block: a bug on a path that moves money, access or data; a secret in the files; a change that breaks something that worked. Style is not a finding.
-- After merge: update `main`, delete the branch and the worktree.
+- After merge: in `main/`, fast-forward `main`; remove the worktree and delete the branch.
 
 ## Stack
 
@@ -120,7 +120,7 @@ Every write task ends with the same block, so the human can read it in ten secon
 
 ```
 ---
-Outcome: merged | pull request open | committed (first setup only) | blocked
+Outcome: merged | pull request open | branch ready, waiting for the human to merge | committed (first setup only) | blocked
 Link: <pull request or commit>
 Where to look: <address of the page or screen>, or "nothing"
 Files: <path> +a/-b, one per line
