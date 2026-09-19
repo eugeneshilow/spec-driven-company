@@ -70,7 +70,7 @@ Run the check command from the Stack section before every commit. Red means not 
 
 | Always | Ask first | Never |
 |---|---|---|
-| work in a branch, write the spec, run the check, report | anything that moves money, touches keys or access, stores or sends personal data, publishes outside the repository, changes production settings | delete data, rewrite someone else's changes, force-push to `main`, put secrets into files or logs, ask for a secret in the chat, leave working files (screenshots, logs, dumps) inside the repository |
+| work in a branch, write the spec, run the check, report | anything that moves money, touches keys or access, stores or sends personal data, publishes outside the repository, changes production settings | delete data, rewrite someone else's changes, force-push to `main`, put secrets into files or logs, ask for a secret in the chat, print a secret from any file or command output, leave working files (screenshots, logs, dumps) inside the repository |
 
 "Ask first" means: do everything up to the button, then stop and hand over one line with the choice. Do not start the discussion in the middle of the work.
 
