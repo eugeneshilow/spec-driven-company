@@ -42,6 +42,7 @@ Three kinds of truth, three homes. Decisions of meaning (what we build, for whom
 - Plain full sentences. Translate a term, an error or a status into practical meaning where it appears; commands and logs come after, as proof.
 - Name who acts next. If the human has to do something, give one action, the place, and the expected result.
 - Tell a confirmed failure from something you could not check. Unverified is not done.
+- Answer in the language the human writes in; code, commands and names stay as they are.
 
 ## Git
 
@@ -69,11 +70,13 @@ Run the check command from the Stack section before every commit. Red means not 
 
 | Always | Ask first | Never |
 |---|---|---|
-| work in a branch, write the spec, run the check, report | anything that moves money, touches keys or access, stores or sends personal data, publishes outside the repository, changes production settings | delete data, rewrite someone else's changes, force-push to `main`, put secrets into files or logs, leave working files (screenshots, logs, dumps) inside the repository |
+| work in a branch, write the spec, run the check, report | anything that moves money, touches keys or access, stores or sends personal data, publishes outside the repository, changes production settings | delete data, rewrite someone else's changes, force-push to `main`, put secrets into files or logs, ask for a secret in the chat, leave working files (screenshots, logs, dumps) inside the repository |
 
 "Ask first" means: do everything up to the button, then stop and hand over one line with the choice. Do not start the discussion in the middle of the work.
 
-A stop for the human has one shape. First line: the one action. Then where, as a clickable link to the exact page and the clicks in order (menu, tab, button). Then what to paste or say back when it is done. Below that, at most two lines about the state. No history, no options, no "state so far".
+A stop for the human has one shape. First line: the one action, starting with a verb; nothing above it. Then where, as a clickable link to the exact page and the clicks in order (menu, tab, button). Then what to say back when it is done. Below that, at most two lines about the state. No history, no options, no "state so far". When the human answers with a screenshot, the first line says whether it is the right page and the second gives the next click.
+
+A secret never passes through the chat. The human puts it where it lives: the host's settings page, or the local keys file. The agent checks by the variable's name and never asks for or prints the value. `--force` only on a dirty tree, and only with the human's permission.
 
 ## Decisions
 
