@@ -73,6 +73,8 @@ Ejecuta el comando de comprobación de la sección Stack antes de cada commit. R
 
 «Pregunta primero» significa: haz todo hasta el botón, luego para y entrega una línea con la elección. No abras la discusión en mitad del trabajo.
 
+Una parada para la persona tiene una sola forma. Primera línea: la única acción. Luego dónde, como enlace clicable a la página exacta y los clics en orden (menú, pestaña, botón). Luego qué pegar o decir cuando esté hecho. Debajo, como mucho dos líneas sobre el estado. Sin historia, sin opciones, sin «estado hasta ahora».
+
 ## Decisiones
 
 Una decisión es una elección que mañana podría reabrirse. Se registra en `docs/journal.md` como una entrada con nombre estable:
