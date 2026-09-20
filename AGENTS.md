@@ -16,11 +16,11 @@ Every task is one of three kinds. Decide before reading files or touching git.
 
 - `docs/README.md` — one page: what this project is, the decisions made, where things are.
 - `docs/journal.md` — decisions and why: what was decided, what was rejected, in whose words. Append-only, newest first.
-- `docs/<zone>.md` — the canon of one zone: how it works right now. One rule, written once, edited by replacement.
+- `docs/<name>.md` — any other file the project needs: how one part of it works right now, such as deploy, the admin page or mail. One rule, written once, edited by replacement.
 
 Runtime files sit next to this one and add, never weaken: `CLAUDE.md` points Claude Code here; `CODEX.md` carries what is specific to Codex. Where they disagree with this file, this file wins.
 
-The pair at the root of `docs/` belongs to the whole project. Every subfolder of `docs/` carries its own pair: `README.md` (the summary of the folder) and `journal.md` (the thinking behind it). A new folder is born with both. A zone file is born with the zone's first rule; do not create empty ones.
+The pair at the root of `docs/` belongs to the whole project. Every subfolder of `docs/` carries its own pair: `README.md` (the summary of the folder) and `journal.md` (the thinking behind it). A new folder is born with both. Such a file is born with its first rule; do not create empty ones.
 
 If a rule is not written at an address, it does not exist. "Ask the person who remembers" is not an address.
 
@@ -112,7 +112,7 @@ Rules around decisions:
 
 - One rule has one home. Other documents link to it; they do not copy it.
 - The canon changes by replacement. The old rule is deleted in the same commit; history lives in the journal and in git.
-- Before proposing a change to architecture, URLs, data schema or process, read the journal for that zone. Decided questions are not reopened without the owner asking.
+- Before proposing a change to architecture, URLs, data schema or process, read the journal for that part of the project. Decided questions are not reopened without the owner asking.
 - A "not now" is recorded with the event that reopens it, not a date.
 - Thinking that happened in chat and is not in the journal is unfinished work, like code without a commit.
 
@@ -131,7 +131,7 @@ Anything that will run without a human, a form, a webhook, a scheduled job, an i
 1. the element itself;
 2. its canon in `docs/`: where the input comes from, where it writes, known edges;
 3. its glass: a place where its status is visible, a page or a line on an existing page;
-4. its immunity: an outside check that fails loudly when the element is broken ("the form renders and the endpoint answers 200"), not a business metric.
+4. its self-heal: an outside check that fails loudly when the element is broken ("the form renders and the endpoint answers 200"), not a business metric.
 
 Content and layout without a new flow of data or money are outside this rule.
 
@@ -148,7 +148,7 @@ Every write task ends with the same block, so the human can read it in ten secon
    <path> +a/-b, one per line; a journal entry carries its title: docs/journal.md +12/-0 · «name of the entry»
 🌐 where to look
    <address>, one per line: local · preview · production
-🛂 passport · element ✅ · canon ✅ · glass ✅ · immunity ⬜ (only when something will run without a human)
+🛂 passport · element ✅ · canon ✅ · glass ✅ · self-heal ⬜ (only when something will run without a human)
 ⚠️ not verified · what you could not check and why, or "nothing"
 ```
 

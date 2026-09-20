@@ -16,11 +16,11 @@ Toda tarea es de uno de tres tipos. Decídelo antes de leer archivos o tocar git
 
 - `docs/README.md` — una página: qué es este proyecto, qué decisiones se tomaron, dónde está cada cosa.
 - `docs/journal.md` — decisiones y por qué: qué se decidió, qué se rechazó, con palabras de quién. Solo se añade, lo más nuevo arriba.
-- `docs/<zona>.md` — el canon de una zona: cómo funciona ahora mismo. Una regla, escrita una vez, editada por reemplazo.
+- `docs/<nombre>.md` — cualquier otro archivo que el proyecto necesite: cómo funciona una parte de él ahora mismo, por ejemplo el despliegue, la página de administración o el correo. Una regla, escrita una vez, editada por reemplazo.
 
 Los archivos de cada herramienta están junto a este y solo añaden, nunca debilitan: `CLAUDE.md` dirige a Claude Code hasta aquí; `CODEX.md` lleva lo que es específico de Codex. Donde discrepen con este archivo, gana este archivo.
 
-El par en la raíz de `docs/` pertenece a todo el proyecto. Cada subcarpeta de `docs/` lleva su propio par: `README.md` (el resumen de la carpeta) y `journal.md` (el razonamiento detrás). Una carpeta nueva nace con los dos. Un archivo de zona nace con la primera regla de la zona; no crees archivos vacíos.
+El par en la raíz de `docs/` pertenece a todo el proyecto. Cada subcarpeta de `docs/` lleva su propio par: `README.md` (el resumen de la carpeta) y `journal.md` (el razonamiento detrás). Una carpeta nueva nace con los dos. Un archivo así nace con su primera regla; no crees archivos vacíos.
 
 Si una regla no está escrita en una dirección, no existe. «Pregúntale a quien se acuerde» no es una dirección.
 
@@ -112,7 +112,7 @@ Reglas alrededor de las decisiones:
 
 - Una regla tiene una sola casa. Los demás documentos enlazan a ella; no la copian.
 - El canon cambia por reemplazo. La regla vieja se borra en el mismo commit; la historia vive en el journal y en git.
-- Antes de proponer un cambio de arquitectura, URLs, esquema de datos o proceso, lee el journal de esa zona. Las cuestiones decididas no se reabren sin que el dueño lo pida.
+- Antes de proponer un cambio de arquitectura, URLs, esquema de datos o proceso, lee el journal de esa parte del proyecto. Las cuestiones decididas no se reabren sin que el dueño lo pida.
 - Un «ahora no» se registra con el evento que lo reabre, no con una fecha.
 - El razonamiento que ocurrió en el chat y no está en el journal es trabajo sin terminar, como código sin commit.
 
@@ -131,7 +131,7 @@ Todo lo que vaya a funcionar sin una persona, un formulario, un webhook, una tar
 1. el elemento en sí;
 2. su canon en `docs/`: de dónde viene la entrada, dónde escribe, bordes conocidos;
 3. su cristal: un lugar donde se ve su estado, una página o una línea en una página existente;
-4. su inmunidad: una comprobación externa que falla a gritos cuando el elemento está roto («el formulario se renderiza y el endpoint responde 200»), no una métrica de negocio.
+4. su self-heal: una comprobación externa que falla a gritos cuando el elemento está roto («el formulario se renderiza y el endpoint responde 200»), no una métrica de negocio.
 
 El contenido y la maquetación sin un nuevo flujo de datos o dinero quedan fuera de esta regla.
 
@@ -148,7 +148,7 @@ Toda tarea de escritura termina con el mismo bloque, para que la persona lo lea 
    <ruta> +a/-b, una por línea; una entrada del journal lleva su título: docs/journal.md +12/-0 · «nombre de la entrada»
 🌐 dónde mirar
    <dirección>, una por línea: local · preview · producción
-🛂 pasaporte · elemento ✅ · canon ✅ · cristal ✅ · inmunidad ⬜ (solo cuando algo va a funcionar sin una persona)
+🛂 pasaporte · elemento ✅ · canon ✅ · cristal ✅ · self-heal ⬜ (solo cuando algo va a funcionar sin una persona)
 ⚠️ no verificado · qué no pudiste comprobar y por qué, o «nada»
 ```
 
