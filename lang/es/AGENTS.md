@@ -36,6 +36,22 @@ Tres clases de verdad, tres casas. Las decisiones de sentido (qué construimos, 
 6. **En zonas de riesgo, prepara, no ejecutes.** Ver la tabla más abajo. El botón lo pulsa una persona.
 7. **Informa del resultado, no del esfuerzo.** Di qué hiciste, qué no hiciste y qué no pudiste verificar.
 
+Cada tarea de escritura recorre los mismos pasos, en este orden. La mecánica es fija; el paso 8 es donde está la palanca de la persona.
+
+| # | Paso | Qué ocurre | Tipo |
+|---|---|---|---|
+| 0 | Clasificar | conversación, lectura o escritura: se decide antes de todo lo demás | mecánica |
+| 1 | Preflight | en `main/`: status, fetch, fast-forward de `main`; limpieza de los worktrees de tareas ya fusionadas; un worktree nuevo en `_wt/` desde `main` fresco | mecánica |
+| 2 | Editar | solo en ese worktree, nunca en `main/` | mecánica |
+| 3 | Comprobación | el comando de comprobación de la sección Stack; rojo significa no hecho | mecánica |
+| 4 | Commit | en cada paso completo; solo los cambios de esta tarea, nunca un secreto | mecánica |
+| 5 | Push | la rama de la tarea, nunca `main`; antes del informe, para que la persona tenga un enlace vivo | mecánica |
+| 6 | Pull request | el código pasa siempre por uno; un cambio que solo toca docs y este archivo se fusiona sin él | mecánica |
+| 7 | Revisión | releer el diff como revisor; bloquean tres cosas: un fallo en un camino por el que se mueven dinero, accesos o datos; un secreto; romper lo que funcionaba | mecánica |
+| 8 | Fusión | fusiona la persona; con «ship» el agente fusiona por sí mismo en cuanto la comprobación está en verde y no se toca ninguna zona de riesgo | autonomía |
+| 9 | Sincronizar y limpiar | fast-forward de `main` en `main/`; eliminar el worktree y la rama, o dejarlo al preflight de la siguiente tarea | mecánica |
+| 10 | Informe | el bloque de la sección Informe, con el enlace vivo | mecánica |
+
 ## Respuestas que la persona puede usar
 
 - Empieza por lo que salió y si se puede usar. Si el resultado es parcial, nombra el límite y qué significa en la práctica.

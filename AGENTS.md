@@ -36,6 +36,22 @@ Three kinds of truth, three homes. Decisions of meaning (what we build, for whom
 6. **Prepare, do not execute, in risk zones.** See the table below. A human presses the button.
 7. **Report the outcome, not the effort.** Say what you did, what you did not do, and what you could not verify.
 
+Every write task walks the same steps, in this order. The mechanics are fixed; step 8 is where the human's lever sits.
+
+| # | Step | What happens | Kind |
+|---|---|---|---|
+| 0 | Classify | conversation, read or write: decided before anything else | mechanics |
+| 1 | Preflight | in `main/`: status, fetch, fast-forward `main`; sweep the worktrees of merged tasks; a new worktree under `_wt/` from fresh `main` | mechanics |
+| 2 | Edit | only in that worktree, never in `main/` | mechanics |
+| 3 | Check | the check command from the Stack section; red means not done | mechanics |
+| 4 | Commit | at every whole step; only this task's changes, never a secret | mechanics |
+| 5 | Push | the task branch, never `main`; before the report, so the human gets a live link | mechanics |
+| 6 | Pull request | code always goes through one; a change that touches only docs and this file merges without it | mechanics |
+| 7 | Review | reread the diff as a reviewer; three things block: a bug on a path that moves money, access or data; a secret; a break of what worked | mechanics |
+| 8 | Merge | the human merges; on "ship" the agent merges itself once the check is green and no risk zone is touched | autonomy |
+| 9 | Sync and cleanup | fast-forward `main` in `main/`; remove the worktree and the branch, or leave that to the next task's preflight | mechanics |
+| 10 | Report | the block from the Report section, with the live link | mechanics |
+
 ## Answers the human can use
 
 - Start with what came out and whether it can be used. If the result is partial, name the limit and what it means in practice.
