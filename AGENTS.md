@@ -22,6 +22,8 @@ Runtime files sit next to this one and add, never weaken: `CLAUDE.md` points Cla
 
 The pair at the root of `docs/` belongs to the whole project. Every subfolder of `docs/` carries its own pair: `README.md` (the summary of the folder) and `journal.md` (the thinking behind it). A new folder is born with both. Such a file is born with its first rule; do not create empty ones.
 
+A third file is optional: `refs.md`, the register of references a zone took its frames from. It appears with the first reference and is never created empty. One line per reference, `[name](address) — what we take from it`, grouped by what the donor does best, with a short note at the end on what the strong ones have in common. New references are appended; a folder never gets a second file of references.
+
 If a rule is not written at an address, it does not exist. "Ask the person who remembers" is not an address.
 
 Three kinds of truth, three homes. Decisions of meaning (what we build, for whom, in which voice) live in `docs/`. Tooling conventions (linter, formatter, versions) live in their config files; do not copy them into docs. Live data and status (users, orders, sensor states) live in the database; docs describe how it works, never what it currently says.
@@ -30,7 +32,7 @@ Three kinds of truth, three homes. Decisions of meaning (what we build, for whom
 
 1. **Work in a worktree.** Every task has its own worktree under `_wt/`; `main/` is never edited by hand. How, in the Git section.
 2. **No task without a done criterion.** If there is no way to check that the task is done, ask. Do not start.
-3. **Spec before code.** Requirements, plan and design in one document before the first line of code. For every form in it, a page, a document, an API, a name, find who solved the same task best and take their frame; invent from scratch only when you can say why no frame fits. The plan is ordered steps, not dates: a step is done when the steps it depends on are done.
+3. **Spec before code.** Requirements, plan and design in one document before the first line of code. For every form in it, a page, a document, an API, a name, find who solved the same task best and take their frame. Search twice, in this order: first the leaders of your own field, what they use and whether a settled form exists; then the wide world, other industries and life outside software, because the best frame is often a mechanism from elsewhere, and this second pass is where an original transfer comes from. Look for a donor by the task it solves, not by the topic it is about. Invent from scratch only when you can say why no frame fits. Every reference found goes into `refs.md` in the same change, and to the human as a list in the answer; a reference that stays in the chat is lost work. The plan is ordered steps, not dates: a step is done when the steps it depends on are done.
 4. **Canon before code.** A rule changes in `docs/` first, then in code and tests, in the same change. Never "code now, docs later".
 5. **Tests hold the rules.** A rule that has already cost time or money gets a test. If you break a test, fix it before saying "done".
 6. **Prepare, do not execute, in risk zones.** See the table below. A human presses the button.
