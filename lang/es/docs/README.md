@@ -14,7 +14,7 @@ Las decisiones viven en [journal.md](journal.md), las más nuevas arriba, cada u
 
 ## Dónde está cada cosa
 
-- `docs/` — la verdad: esta página, el journal, un archivo por zona.
+- `docs/` — la verdad: esta página, el journal, un archivo por zona, y `refs.md` donde se reunieron referencias.
 - `AGENTS.md` — las reglas que todo agente lee primero. Su sección Stack dice de qué está hecho el proyecto, cómo comprobarlo y cómo ejecutarlo.
 - [`src/` o donde viva el código — una línea]
 - [el archivo con las claves — su nombre y la nota de que nunca se sube al repositorio]

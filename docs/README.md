@@ -14,7 +14,7 @@ Decisions live in [journal.md](journal.md), newest first, each with a stable nam
 
 ## Where things are
 
-- `docs/` — the truth: this page, the journal, one file per zone.
+- `docs/` — the truth: this page, the journal, one file per zone, and `refs.md` where references were gathered.
 - `AGENTS.md` — the rules every agent reads first. Its Stack section says what the project is made of, how to check it and how to run it.
 - [`src/` or wherever the code lives — one line]
 - [the file with the keys — its name and the note that it is never committed]
