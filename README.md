@@ -148,6 +148,8 @@ Done when the bot answers /start in Telegram, /status answers me and refuses a s
 - `docs/journal.md` — decisions and why, append-only, newest first. The first entry is already there: you adopted the method.
 - Two pointer files in the project folder, `AGENTS.md` and `CLAUDE.md`, are written by the prompt, not downloaded: they send any agent opened at the project folder to `main/`.
 
+The rules keep the project in order. The crafts on top of them, such as a research pass that keeps its sources or a second opinion from another model before a risky merge, are a separate thing: Agent Skills, one folder each, installed per person, not per project. The author's live in [eugeneshilow/skills](https://github.com/eugeneshilow/skills); `npx skills add eugeneshilow/skills` picks from the list. The method does not depend on them.
+
 ## See it working
 
 Open [vibecoding.ru](https://vibecoding.ru) right now. Everything there, the code, the pages, the news, the cards, is written by agents. One hundred percent, not ninety-nine. The author did not write a line. He wrote the rules and accepted the work. The operator opens three things and nothing else: `docs/`, `AGENTS.md` with `CLAUDE.md` and `CODEX.md`, and the file with the keys. How it runs, live: [vibecoding.ru/open](https://vibecoding.ru/open).
