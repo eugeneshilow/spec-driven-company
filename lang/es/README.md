@@ -150,6 +150,8 @@ Terminado cuando el bot responde a /start en Telegram, /status me responde a mí
 - `docs/journal.md` — decisiones y por qué, solo se añade, lo más nuevo arriba. La primera entrada ya está: adoptaste el método.
 - Dos archivos indicadores en la carpeta del proyecto, `AGENTS.md` y `CLAUDE.md`, los escribe el prompt, no se descargan: envían a cualquier agente abierto en la carpeta del proyecto hacia `main/`.
 
+Las reglas mantienen el proyecto en orden. Los oficios encima de ellas, como una investigación que conserva sus fuentes o una segunda opinión de otro modelo antes de un merge arriesgado, son otra cosa: Agent Skills, una carpeta por habilidad, instaladas por persona y no por proyecto. Las del autor viven en [eugeneshilow/skills](https://github.com/eugeneshilow/skills); `npx skills add eugeneshilow/skills` permite elegir de la lista. El método no depende de ellas.
+
 ## Míralo funcionando
 
 Abre [vibecoding.ru](https://vibecoding.ru) ahora mismo. Todo lo que hay allí, el código, las páginas, las noticias, las fichas, está escrito por agentes. Cien por cien, no noventa y nueve. El autor no escribió ni una línea. Escribió las reglas y aceptó el trabajo. El operador abre tres cosas y nada más: `docs/`, `AGENTS.md` con `CLAUDE.md` y `CODEX.md`, y el archivo con las claves. Cómo funciona, en vivo: [vibecoding.ru/open](https://vibecoding.ru/open).
